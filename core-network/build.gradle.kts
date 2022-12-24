@@ -10,5 +10,5 @@ java {
 
 dependencies {
     implementation(libs.retrofit)
-    implementation(libs.retrofit.converter)
+    implementation(libs.moshiConverter)
 }

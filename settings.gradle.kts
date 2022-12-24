@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 include(":app")
 rootProject.name = "Sample Projects Android"
 include(":core-network")
-include(":core-database")
+include(":features:feature-myFeature")
