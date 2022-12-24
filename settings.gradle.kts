@@ -20,3 +20,5 @@ dependencyResolutionManagement {
 }
 include(":app")
 rootProject.name = "Sample Projects Android"
+include(":network")
+include(":core-database")
