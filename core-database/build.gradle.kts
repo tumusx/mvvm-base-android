@@ -1,20 +1,19 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
+    kotlin("kapt")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.tumusx.sampleprojectsandroid"
+    namespace = "com.tumusx.core_database"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.tumusx.sampleprojectsandroid"
         minSdk = 23
         targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -31,15 +30,12 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = ("1.8")
+        jvmTarget = "1.8"
     }
 }
 
 dependencies {
-    implementation(libs.bundles.android.core)
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit.android.core)
-    implementation(libs.constraintlayout)
-    androidTestImplementation(libs.junit.android)
+    annotationProcessor(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
 }
